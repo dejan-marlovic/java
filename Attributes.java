@@ -81,6 +81,10 @@ public class Attributes {
          * 
          * The final keyword is called a "modifier"
          */
+
+        //Git
+        //Any time you need some help remembering the specific option for
+        // a command, you can use git command -help:
     }
 
 }
