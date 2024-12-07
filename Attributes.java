@@ -23,8 +23,23 @@ public class Attributes {
     1. git init (only once initiates/creates repository)
     2. git status lists untracked items
     3. git add . adds items to staging
+
+    Small change
      */
 
+    /*
+    Note: Short status flags are:
+
+    ?? - Untracked files
+    A - Files added to stage
+    M - Modified files
+    D - Deleted files
+    We see the file we expected is modified. So let's commit it directly
+
+    Warning: Skipping the Staging Environment is not generally recommended.
+
+    Skipping the stage step can sometimes make you include unwanted changes.
+     */
 
 
 
