@@ -38,9 +38,9 @@ public class Attributes {
      */
 
     int x = 5;
-    final int y = 3;
+    //final int y = 3;
     String fname = "Joe";
-    String lname = "Doe";
+    //String lname = "Doe";
 
     public static void main(String[] args) {
 
