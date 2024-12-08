@@ -49,3 +49,5 @@ specifies that we are currently on that branch.
 checkout is the command used to check out a branch.
 Moving us from the current branch, to the one specified at the end of the command:
 
+After staging and commit we have  a new branch, that is different from the master branch.
+
