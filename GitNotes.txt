@@ -43,3 +43,9 @@ You can even switch between branches and work on different projects without them
 
 Branching in Git is very lightweight and fast!
 
+We can see the new branch with the name "git-test", but the * beside master
+specifies that we are currently on that branch.
+
+checkout is the command used to check out a branch.
+Moving us from the current branch, to the one specified at the end of the command:
+
