@@ -51,3 +51,7 @@ Moving us from the current branch, to the one specified at the end of the comman
 
 After staging and commit we have  a new branch, that is different from the master branch.
 
+Since the emergency-fix branch came directly from master, and no other changes had been made to master while we were working, Git sees this as a continuation of master. So it can "Fast-forward", just pointing both master and emergency-fix to the same commit.
+
+As master and emergency-fix are essentially the same now, we can delete emergency-fix, as it is no longer needed:
+
