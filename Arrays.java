@@ -32,7 +32,7 @@ public class Arrays {
          * property), and it is more readable.
          */
 
-        int ages[] = { 20, 22, 18, 35, 48, 26, 87, 70 };
+        int [] ages = { 20, 22, 18, 35, 48, 26, 87, 70 };
 
         float avg, sum = 0;
 
