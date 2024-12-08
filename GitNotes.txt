@@ -43,3 +43,5 @@ You can even switch between branches and work on different projects without them
 
 Branching in Git is very lightweight and fast!
 
+Note: Using the -b option on checkout will create a new branch, and move to it, if it does not exist
+
