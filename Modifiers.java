@@ -34,7 +34,7 @@ For classes, you can use either final or abstract:
 Modifier	Description
 final	    The class cannot be inherited by other classes
 
-abstract	The class cannot be used to create objects (To access an abstract class,
+abstract	The class cannot be used to create objects. To access an abstract class,
             it must be inherited from another class.
 
 
@@ -70,6 +70,7 @@ public class Modifiers{
         // will generate an error: cannot assign a value to a final variable
         //obj.PI = 25;
         System.out.println(obj.x);
+        System.out.println(obj.PI);
 
         obj.myPublicMethod();
 
