@@ -22,6 +22,7 @@ public class Person2{
         //is either true or false
         student = true;
     }
+
     public boolean isStudent(){
         return student;
     }
