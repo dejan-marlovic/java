@@ -1,5 +1,7 @@
 //Exercise Personuppgifter 1
 
+import java.util.Scanner;
+
 public class Person2{
     String firstName, lastName;
     //double because can have decimal value
@@ -56,61 +58,82 @@ public class Person2{
         }
     }
    public String printFormattedInfo(){
-        return this.fullName() + " is " + this.age + " years old " + "they weigh " +
-                this.weight + " kg "+ "and are " + this.formatHeight(height) +" tall."
-                + " This means that their BMI is: " +
-                this.calculateBMI(this.weight, this.height) +"." + " They are " +
-                (this.isStudent() ? "student" : "not a student") + " and " +
-                (isOfAge(this.age) ? "of age " : " not of age");
+        return this.fullName()
+                + " is " + this.age + " years old "
+                + "they weigh "
+                + this.weight + " kg "+ "and are " + this.formatHeight(height) +" tall."
+                + " This means that their BMI is: "
+                + this.calculateBMI(this.weight, this.height) +"."
+                + " They are "
+                + (this.isStudent() ? "student" : "not a student") + " and "
+                + (isOfAge(this.age) ? "of age " : " not of age");
    }
 
-   boolean validateName(String name){
+   static void validateName(String name) throws Exception{
 
-        if(name.matches(".*\\\\d.*")) {
-            System.out.println("Name can not contain numbers!");
-            return false;
+        if(!name.matches("^[a-zA-Z]+$")) {
+            throw new Exception("Name can not contain numbers!");
         }
         else if (name.length() <= 2){
-            System.out.println("Name has to be longer than 2 characters!");
-            return false;
+            throw new Exception("Name has to be longer than 2 characters!");
+
         }
         else if(name.matches("^-.*|.*-$")) {
-            System.out.println("Name can not start or end with an hyphen!");
-            return false;
-
-        }else{
-            return true;
+            throw new Exception("Name can not start or end with a hyphen!");
         }
 
    }
 
-   boolean validateStreetName(String streetName){
+   static void validateStreetName(String streetName) throws Exception{
         if (!streetName.matches("^[a-zA-Z]+$"))
         {
-            System.out.println("Street name should only contain letters!");
-            return false;
+            throw new Exception("Street name should only contain letters!");
         }
-        else return true;
    }
 
-   public boolean validateStreetNumber(String streetNumber){
+  static void validateStreetNumber(String streetNumber) throws Exception{
 
-        if (streetNumber.matches("^[0-9]+[a-zA-Z]?$")){
-            return true;
+        if (!streetNumber.matches("^[0-9]+[a-zA-Z]?$")){
+            throw new Exception("Street number can only contain numbers and optionally a letter at the end!");
         }
-        else {
-            System.out.println("Street number can only contain numbers and optionally a letter at the end!");
-            return false;
-        }
+
    }
     public static void main(String[] args){
-        Person2 person = new Person2();
-        //System.out.println(person.printFormattedInfo());
-        System.out.println(person.firstName);
-        System.out.println(person.streetName);
-        System.out.println(person.validateName(person.firstName));
-        System.out.println(person.validateStreetName(person.streetName));
-        System.out.println(person.streetNumber);
-        System.out.println(person.validateStreetNumber(person.streetNumber));
+        boolean tryAgain  = true;
+        Scanner scanner = new Scanner(System.in);
+        do{
+            String firstName = null;
+            String lastName = null;
+            String streetName = null;
+            String streetNumber = null;
+
+            try{
+                System.out.println("Please enter first name!");
+                firstName = scanner.nextLine();
+                validateName(firstName);
+                System.out.println("Please enter last name!");
+                lastName = scanner.nextLine();
+                validateName(lastName);
+                System.out.println("Please enter street name!");
+                streetName = scanner.nextLine();
+                validateStreetName(streetName);
+                System.out.println("Please enter street number!");
+                streetNumber = scanner.nextLine();
+                validateStreetNumber(streetNumber);
+                if (firstName != null && lastName != null && streetName != null && streetNumber != null){
+                    tryAgain = false;
+
+                    System.out.println(firstName);
+                }
+
+            }catch(Exception e){
+                System.out.println(e.toString());
+                System.out.println("Do you want to try again? y/n");
+                String answer = scanner.nextLine();
+                tryAgain = !answer.equals("y");
+            }
+        }while(!tryAgain);
+
+
     }
 }
