@@ -28,7 +28,7 @@ public class Person2{
 
         streetName = "Lundagatan";
 
-        streetNumber = "?34";
+        streetNumber = "34a";
     }
 
     public boolean isStudent(){
@@ -95,7 +95,7 @@ public class Person2{
 
    public boolean validateStreetNumber(String streetNumber){
 
-        if (streetNumber.matches("^\\d+([a-zA-Z]?)$")){
+        if (streetNumber.matches("^[0-9]+[a-zA-Z]?$")){
             return true;
         }
         else {
