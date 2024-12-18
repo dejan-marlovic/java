@@ -9,6 +9,10 @@ public class Person2{
     //is either true or false
     boolean student;
 
+    String streetName;
+
+    String streetNumber;
+
     Person2 (){
         //String name is text
         firstName = "Karl-Erik";
@@ -21,6 +25,10 @@ public class Person2{
         age = 48;
         //is either true or false
         student = true;
+
+        streetName = "Lundagatan";
+
+        streetNumber = "?34";
     }
 
     public boolean isStudent(){
@@ -75,10 +83,34 @@ public class Person2{
         }
 
    }
+
+   boolean validateStreetName(String streetName){
+        if (!streetName.matches("^[a-zA-Z]+$"))
+        {
+            System.out.println("Street name should only contain letters!");
+            return false;
+        }
+        else return true;
+   }
+
+   public boolean validateStreetNumber(String streetNumber){
+
+        if (streetNumber.matches("^\\d+([a-zA-Z]?)$")){
+            return true;
+        }
+        else {
+            System.out.println("Street number can only contain numbers and optionally a letter at the end!");
+            return false;
+        }
+   }
     public static void main(String[] args){
         Person2 person = new Person2();
         //System.out.println(person.printFormattedInfo());
         System.out.println(person.firstName);
+        System.out.println(person.streetName);
         System.out.println(person.validateName(person.firstName));
+        System.out.println(person.validateStreetName(person.streetName));
+        System.out.println(person.streetNumber);
+        System.out.println(person.validateStreetNumber(person.streetNumber));
     }
 }
