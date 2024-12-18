@@ -11,7 +11,7 @@ public class Person2{
 
     Person2 (){
         //String name is text
-        firstName = "John";
+        firstName = "Karl-Erik";
         lastName = "Doe";
         //double because can have decimal value
         height = 1.75;
@@ -55,8 +55,30 @@ public class Person2{
                 (this.isStudent() ? "student" : "not a student") + " and " +
                 (isOfAge(this.age) ? "of age " : " not of age");
    }
+
+   boolean validateName(String name){
+
+        if(name.matches(".*\\\\d.*")) {
+            System.out.println("Name can not contain numbers!");
+            return false;
+        }
+        else if (name.length() <= 2){
+            System.out.println("Name has to be longer than 2 characters!");
+            return false;
+        }
+        else if(name.matches("^-.*|.*-$")) {
+            System.out.println("Name can not start or end with an hyphen!");
+            return false;
+
+        }else{
+            return true;
+        }
+
+   }
     public static void main(String[] args){
         Person2 person = new Person2();
-        System.out.println(person.printFormattedInfo());
+        //System.out.println(person.printFormattedInfo());
+        System.out.println(person.firstName);
+        System.out.println(person.validateName(person.firstName));
     }
 }
