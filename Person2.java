@@ -58,16 +58,22 @@ public class Person2{
             return meters + " meter " + "and " + centimeters + " cm";
         }
     }
-   public String printFormattedInfo(){
+
+    public String getStreet() {
+        return streetName + " " + streetNumber;
+    }
+
+    public String printFormattedInfo(){
         return this.fullName()
                 + " is " + this.age + " years old "
                 + "they weigh "
-                + this.weight + " kg "+ "and are " + this.formatHeight(height) +" tall."
-                + " This means that their BMI is: "
+                + this.weight + " kg "+ "and are " + this.formatHeight(height) +" tall.\n"
+                + "This means that their BMI is: "
                 + this.calculateBMI(this.weight, this.height) +"."
                 + " They are "
-                + (this.isStudent() ? "student" : "not a student") + " and "
-                + (isOfAge(this.age) ? "of age " : " not of age");
+                + (this.isStudent() ? "a student" : "not a student") + " and "
+                + (isOfAge(this.age) ? "of age. " : " not of age.")
+                + this.fullName() + " currently resides at: " + this.getStreet();
    }
 
    static void validateName(String name) throws Exception{
@@ -115,7 +121,7 @@ public class Person2{
                         System.out.println("Please enter first name!");
                         firstName = scanner.nextLine();
                         validateName(firstName);
-                        if (!firstName.isEmpty()){
+                        if (!firstName.trim().isEmpty()){
                             promptNr++;
                         }else{
                             break;
@@ -124,7 +130,7 @@ public class Person2{
                         System.out.println("Please enter last name!");
                         lastName = scanner.nextLine();
                         validateName(lastName);
-                        if (!lastName.isEmpty()){
+                        if (!(lastName.trim().isEmpty())){
                             promptNr++;
                         }else{
                             break;
@@ -133,7 +139,7 @@ public class Person2{
                         System.out.println("Please enter street name!");
                         streetName = scanner.nextLine();
                         validateStreetName(streetName);
-                        if (!streetName.isEmpty()){
+                        if (!streetName.trim().isEmpty()){
                             promptNr++;
                         }else{
                             break;
@@ -142,9 +148,10 @@ public class Person2{
                         System.out.println("Please enter street number!");
                         streetNumber = scanner.nextLine();
                         validateStreetNumber(streetNumber);
-                        if (!streetNumber.isEmpty()){
-                            promptNr++;
-                        }else{
+                        if (!streetNumber.trim().isEmpty()){
+                            tryAgain = false;
+                        }
+                        else{
                             break;
                         }
                 }
@@ -153,9 +160,9 @@ public class Person2{
                 System.out.println(e.toString());
                 System.out.println("Do you want to try again? y/n");
                 String answer = scanner.nextLine();
-                tryAgain = !answer.equals("y");
+                tryAgain = answer.equals("y");
             }
-        }while(!tryAgain);
+        }while(tryAgain);
 
         Person2 person = new Person2(firstName, lastName, streetName, streetNumber);
         System.out.println("I have created person object ");
