@@ -15,10 +15,13 @@ public class Person2{
 
     String streetNumber;
 
-    Person2 (){
+    Person2 (String firstN, String lastN, String streetN, String streetNo){
         //String name is text
-        firstName = "Karl-Erik";
-        lastName = "Doe";
+        firstName = firstN;
+        lastName = lastN;
+        streetName = streetN;
+        streetNumber = streetNo;
+
         //double because can have decimal value
         height = 1.75;
         //double can have decimal value
@@ -28,9 +31,7 @@ public class Person2{
         //is either true or false
         student = true;
 
-        streetName = "Lundagatan";
 
-        streetNumber = "34a";
     }
 
     public boolean isStudent(){
@@ -40,7 +41,7 @@ public class Person2{
         return firstName + " " + lastName;
     }
     public boolean isOfAge(int age){
-        return age > 18;
+        return age >= 18;
     }
     public double calculateBMI(double weight, double height ){
         return weight / (height * height);
@@ -101,29 +102,51 @@ public class Person2{
     public static void main(String[] args){
         boolean tryAgain  = true;
         Scanner scanner = new Scanner(System.in);
+        int promptNr = 1;
+        String firstName = "";
+        String lastName = "";
+        String streetName = "";
+        String streetNumber = "";
         do{
-            String firstName = null;
-            String lastName = null;
-            String streetName = null;
-            String streetNumber = null;
 
             try{
-                System.out.println("Please enter first name!");
-                firstName = scanner.nextLine();
-                validateName(firstName);
-                System.out.println("Please enter last name!");
-                lastName = scanner.nextLine();
-                validateName(lastName);
-                System.out.println("Please enter street name!");
-                streetName = scanner.nextLine();
-                validateStreetName(streetName);
-                System.out.println("Please enter street number!");
-                streetNumber = scanner.nextLine();
-                validateStreetNumber(streetNumber);
-                if (firstName != null && lastName != null && streetName != null && streetNumber != null){
-                    tryAgain = false;
-
-                    System.out.println(firstName);
+                switch(promptNr){
+                    case 1:
+                        System.out.println("Please enter first name!");
+                        firstName = scanner.nextLine();
+                        validateName(firstName);
+                        if (!firstName.isEmpty()){
+                            promptNr++;
+                        }else{
+                            break;
+                        }
+                    case 2:
+                        System.out.println("Please enter last name!");
+                        lastName = scanner.nextLine();
+                        validateName(lastName);
+                        if (!lastName.isEmpty()){
+                            promptNr++;
+                        }else{
+                            break;
+                        }
+                    case 3:
+                        System.out.println("Please enter street name!");
+                        streetName = scanner.nextLine();
+                        validateStreetName(streetName);
+                        if (!streetName.isEmpty()){
+                            promptNr++;
+                        }else{
+                            break;
+                        }
+                    case 4:
+                        System.out.println("Please enter street number!");
+                        streetNumber = scanner.nextLine();
+                        validateStreetNumber(streetNumber);
+                        if (!streetNumber.isEmpty()){
+                            promptNr++;
+                        }else{
+                            break;
+                        }
                 }
 
             }catch(Exception e){
@@ -134,6 +157,8 @@ public class Person2{
             }
         }while(!tryAgain);
 
-
+        Person2 person = new Person2(firstName, lastName, streetName, streetNumber);
+        System.out.println("I have created person object ");
+        System.out.println(person.printFormattedInfo());
     }
 }
