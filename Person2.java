@@ -10,9 +10,7 @@ public class Person2{
     int age;
     //is either true or false
     boolean student;
-
     String streetName;
-
     String streetNumber;
 
     Person2 (String firstN, String lastN, String streetN, String streetNo){
@@ -45,6 +43,7 @@ public class Person2{
     }
     public double calculateBMI(double weight, double height ){
         return weight / (height * height);
+
     }
     public String formatHeight(double height){
         if (height < 1 && height > 0) {
@@ -69,7 +68,7 @@ public class Person2{
                 + "they weigh "
                 + this.weight + " kg "+ "and are " + this.formatHeight(height) +" tall.\n"
                 + "This means that their BMI is: "
-                + this.calculateBMI(this.weight, this.height) +"."
+                + String.format("%.2f", this.calculateBMI(this.weight, this.height)) + "."
                 + " They are "
                 + (this.isStudent() ? "a student" : "not a student") + " and "
                 + (isOfAge(this.age) ? "of age. " : " not of age.")
@@ -88,7 +87,6 @@ public class Person2{
         else if(name.matches("^-.*|.*-$")) {
             throw new Exception("Name can not start or end with a hyphen!");
         }
-
    }
 
    static void validateStreetName(String streetName) throws Exception{
@@ -105,6 +103,13 @@ public class Person2{
         }
 
    }
+
+   static void validateSocialSecurityNumber(String socialSecurityNumber)throws Exception{
+       if (!socialSecurityNumber.matches("^[0-9]{6}-[0-9]{4}$")) {
+           throw new Exception("Social Security Number can only contain numbers and be in following format: YYMMDD-DDDD");
+       }
+    }
+
     public static void main(String[] args){
         boolean tryAgain  = true;
         Scanner scanner = new Scanner(System.in);
@@ -130,7 +135,7 @@ public class Person2{
                         System.out.println("Please enter last name!");
                         lastName = scanner.nextLine();
                         validateName(lastName);
-                        if (!(lastName.trim().isEmpty())){
+                        if (!lastName.trim().isEmpty()){
                             promptNr++;
                         }else{
                             break;
