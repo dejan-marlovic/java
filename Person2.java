@@ -106,14 +106,15 @@ public class Person2{
 
    static void validateSocialSecurityNumber(String socialSecurityNumber)throws Exception{
        if (!socialSecurityNumber.matches("^[0-9]{6}-[0-9]{4}$")) {
-           throw new Exception("Social Security Number can only contain numbers and be in following format: YYMMDD-DDDD");
+           throw new
+                   Exception("Social Security Number can only contain numbers and be in following format: YYMMDD-NNNN");
        }
     }
 
     public static void main(String[] args){
         boolean tryAgain  = true;
         Scanner scanner = new Scanner(System.in);
-        int promptNr = 1;
+        int state = 1;
         String firstName = "";
         String lastName = "";
         String streetName = "";
@@ -121,33 +122,28 @@ public class Person2{
         do{
 
             try{
-                switch(promptNr){
+                switch(state){
                     case 1:
                         System.out.println("Please enter first name!");
                         firstName = scanner.nextLine();
                         validateName(firstName);
                         if (!firstName.trim().isEmpty()){
-                            promptNr++;
-                        }else{
-                            break;
+                            state++;
                         }
+
                     case 2:
                         System.out.println("Please enter last name!");
                         lastName = scanner.nextLine();
                         validateName(lastName);
                         if (!lastName.trim().isEmpty()){
-                            promptNr++;
-                        }else{
-                            break;
+                            state++;
                         }
                     case 3:
                         System.out.println("Please enter street name!");
                         streetName = scanner.nextLine();
                         validateStreetName(streetName);
                         if (!streetName.trim().isEmpty()){
-                            promptNr++;
-                        }else{
-                            break;
+                            state++;
                         }
                     case 4:
                         System.out.println("Please enter street number!");
@@ -155,9 +151,6 @@ public class Person2{
                         validateStreetNumber(streetNumber);
                         if (!streetNumber.trim().isEmpty()){
                             tryAgain = false;
-                        }
-                        else{
-                            break;
                         }
                 }
 
