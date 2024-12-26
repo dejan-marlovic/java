@@ -21,33 +21,50 @@
  * <p>
  * With a new branch called new-design, edit the code directly without impacting the main branch
  * EMERGENCY! There is an unrelated error somewhere else in the project that needs to be fixed ASAP!
- * Create a new branch from the main project called small-error-fix
- * Fix the unrelated error and merge the small-error-fix branch with the main branch
- * You go back to the new-design branch, and finish the work there
- * Merge the new-design branch with main (getting alerted to the small error fix that you were missing)
- * Branches allow you to work on different parts of a project without impacting the main branch.
+ * Create a new branch from the main project called small-error-fix Fix the unrelated error and
+ * merge the small-error-fix branch with the main branch You go back to the new-design branch, and
+ * finish the work there Merge the new-design branch with main (getting alerted to the small error
+ * fix that you were missing) Branches allow you to work on different parts of a project without
+ * impacting the main branch.
  * <p>
  * When the work is complete, a branch can be merged with the main project.
  * <p>
- * You can even switch between branches and work on different projects without them interfering with each other.
+ * You can even switch between branches and work on different projects without them interfering with
+ * each other.
  * <p>
- * Branching in Git is very lightweight and fast!
- * we use git branch branch-name to create new branch
+ * Branching in Git is very lightweight and fast! we use git branch branch-name to create new branch
  * we use git checkout branch-name to move to that branch
  * <p>
- * Note: Using the -b option on checkout will create a new branch, and move to it,
- * if it does not exist
- * to merge with master we use git merge branch-name, but we need to be on the master branch
+ * Note: Using the -b option on checkout will create a new branch, and move to it, if it does not
+ * exist to merge with master we use git merge branch-name, but we need to be on the master branch
  *
  * to connect local repository to remote repository we use:
  * <p>
  * git remote add origin https://github.com/our-githubusername
  * <p>
  * git remote add origin URL specifies that you are adding a remote repository, with the specified
- * URL, as an origin to your local Git repo.
- * Now we can push our master branch to the origin url, and set it as the default remote branch:
+ * URL, as an origin to your local Git repo. Now we can push our master branch to the origin url,
+ * and set it as the default remote branch:
  * <p>
  * git push --set-upstream origin master
+ * <p>
+ * Pulling to Keep up-to-date with Changes When working as a team on a project, it is important that
+ * everyone stays up to date.
+ * <p>
+ * Any time you start working on a project, you should get the most recent changes to your local
+ * copy.
+ * <p>
+ * With Git, you can do that with pull.
+ * <p>
+ * pull is a combination of 2 different commands:
+ * <p>
+ * fetch merge
+ * <p>
+ * Git Pull But what if you just want to update your local repository, without going through all
+ * those steps?
+ * <p>
+ * pull is a combination of fetch and merge. It is used to pull all changes from a remote repository
+ * into the branch you are working on.
  */
 public class Inheritance {
 }
