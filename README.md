@@ -1,7 +1,6 @@
 Hi, this is my w3schools and Lexicon Javautvecklare course exercises repository. More changes incoming.
 
-Pulling to Keep up-to-date with Changes
-When working as a team on a project, it is important that everyone stays up to date.
+Pulling, to Keep up-to-date with changes when working as a team on a project, it is important that everyone stays up to date.
 
 Any time you start working on a project, you should get the most recent changes to your local copy.
 
@@ -14,6 +13,7 @@ merge
 
 
 Git Pull
-But what if you just want to update your local repository, without going through all those steps?
 
-pull is a combination of fetch and merge. It is used to pull all changes from a remote repository into the branch you are working on.
+If you just want to update your local repository, without going through all those steps.
+
+Pull is a combination of fetch and merge. It is used to pull all changes from a remote repository into the branch you are working on.
