@@ -23,6 +23,7 @@
  * <p>
  * <p>
  * Note: The package name should be written in lower case to avoid conflict with class names.
+ * Adding a comment
  */
 package mypack;
 public class MyPackageClass {
