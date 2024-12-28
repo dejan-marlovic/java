@@ -21,6 +21,7 @@
  * javac -d . MyPackageClass.java
  * <p>
  * <p>
+ * <p>
  * Note: The package name should be written in lower case to avoid conflict with class names.
  */
 package mypack;
