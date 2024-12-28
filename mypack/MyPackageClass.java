@@ -6,22 +6,25 @@
  * <p>
  * Save the file as MyPackageClass.java, and compile it:
  * <p>
- * C:\Users\Your Name>javac MyPackageClass.java Then compile the package:
+ * C:\some-file-path\javac MyPackageClass.java Then compile the package:
  * <p>
- * C:\Users\Your Name>javac -d . MyPackageClass.java
+ * C:\some-file-path\>javac -d . MyPackageClass.java
  * <p>
- * This forces the compiler to create the "mypack" package.
- *
+ * This will create folder mypack and compile the class there:
+ * javac -d . MyPackageClass.java
+ * <p>
+ * //now the compiled package will be in folder mypack, we can move the .java file too to avoid
+ * wrong path message
+ * we run the package by: java mypack.MyPackageClass
+ * <p>
  * The -d keyword specifies the destination for where to save the class file. You can use any
  * directory name, like c:/user (windows), or, if you want to keep the package within the same
  * directory, you can use the dot sign ".", like in the example above.
+ * javac -d . MyPackageClass.java
  * <p>
  * Note: The package name should be written in lower case to avoid conflict with class names.
  */
-//now the package has to be in the folder named mypack
-//we run it: java mypack.MyPackageClass
 package mypack;
-
 public class MyPackageClass {
     public static void main(String[] args) {
         System.out.println("This is my package");
