@@ -13,10 +13,8 @@
  * This will create folder mypack and compile the class there:
  * javac -d . MyPackageClass.java
  * <p>
- * //now the compiled package will be in folder mypack, we can move the .java file too to avoid
- * wrong path message
- * we run the package by: java mypack.MyPackageClass
- * <p>
+ * This forces the compiler to create the "mypack" package.
+ *
  * The -d keyword specifies the destination for where to save the class file. You can use any
  * directory name, like c:/user (windows), or, if you want to keep the package within the same
  * directory, you can use the dot sign ".", like in the example above.
