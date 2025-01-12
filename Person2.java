@@ -81,7 +81,7 @@ public class Person2 {
 
     static void validateName(String name) throws Exception {
 
-        if (!name.matches("^[a-zA-Z]+$")) {
+        if (name.matches(".*\\d.*")) {
             throw new Exception("Name can not contain numbers!");
         } else if (name.length() <= 2) {
             throw new Exception("Name has to be longer than 2 characters!");
