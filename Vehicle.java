@@ -1,5 +1,6 @@
 /**
- * Working with Git Branches In Git, a branch is a new/separate version of the main repository.
+ * GIT REPETITION Working with Git Branches In Git, a branch is a new/separate version of the main
+ * repository.
  * <p>
  * Let's say you have a large project, and you need to update the design on it.
  * <p>
@@ -37,7 +38,7 @@
  * <p>
  * Note: Using the -b option on checkout will create a new branch, and move to it, if it does not
  * exist to merge with master we use git merge branch-name, but we need to be on the master branch
- *
+ * <p>
  * to connect local repository to remote repository we use:
  * <p>
  * git remote add origin https://github.com/our-githubusername
@@ -64,7 +65,46 @@
  * those steps?
  * <p>
  * pull is a combination of fetch and merge. It is used to pull all changes from a remote repository
- * into the branch you are working on.
+ * into the branch you are working on. INHERITANCE Java Inheritance (Subclass and Superclass) In
+ * Java, it is possible to inherit attributes and methods from one class to another. We group the
+ * "inheritance concept" into two categories:
+ * <p>
+ * subclass (child) - the class that inherits from another class superclass (parent) - the class
+ * being inherited from To inherit from a class, use the extends keyword.
+ * <p>
+ * In the example below, the Car class (subclass) inherits the attributes and methods from the
+ * Vehicle class (superclass):
  */
-public class Inheritance {
+public class Vehicle {
+    /**
+     * We set the brand attribute in Vehicle to a protected access modifier. If it was set to
+     * private, the Car1 class would not be able to access it.
+     */
+    protected String brand = "Ford";
+
+    public void honk() {
+        System.out.println("Tuut, tuut");
+    }
+}
+
+class Car1 extends Vehicle {
+    private String modelName = "Mustang";
+
+    /**
+     * Why And When To Use "Inheritance"? - It is useful for code reusability: reuse attributes and
+     * methods of an existing class when you create a new class.
+     * <p>
+     * Tip: Also take a look at the next chapter, Polymorphism, which uses inherited methods to
+     * perform different tasks.
+     * If you don't want other classes to inherit from a class, use the final keyword:
+     */
+    public static void main(String[] args) {
+        Car1 myCar = new Car1();
+
+        myCar.honk();
+
+
+        System.out.println(myCar.brand + " " + myCar.modelName);
+
+    }
 }

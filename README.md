@@ -17,3 +17,6 @@ Git Pull
 If you just want to update your local repository, without going through all those steps.
 
 Pull is a combination of fetch and merge. It is used to pull all changes from a remote repository into the branch you are working on.
+
+
+we make some changes to the README.md file. Just add a new line.
