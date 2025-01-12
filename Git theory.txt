@@ -1,0 +1,17 @@
+Working using the GitHub Flow
+we learn how to get the best out of working with GitHub.
+
+The GitHub flow is a workflow designed to work well with Git and GitHub.
+
+It focuses on branching and makes it possible for teams to experiment freely, and make deployments regularly.
+
+The GitHub flow works like this:
+
+Create a new Branch
+Make changes and add Commits
+Open a Pull Request
+Review
+Deploy
+Merge
+
+This  focuses on understanding how the flow makes it easy for you to work together.
